@@ -1,0 +1,37 @@
+{
+  "name": "sf-lib",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./build/index.d.ts",
+        "default": "./build/index.js"
+      }
+    },
+    "./parser": {
+      "import": {
+        "types": "./build/parser/index.d.ts",
+        "default": "./build/parser/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "bunup",
+    "dev": "bunup --watch",
+    "test": "bun test --randomize",
+    "test:watch": "bun test --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bunup": "^0.16.17"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
